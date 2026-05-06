@@ -2,7 +2,7 @@ from fastapi import APIRouter, status
 
 router = APIRouter(
     prefix = "/about",
-    tags = ["Hello"]
+    tags = ["practical_work_1"]
 )
 
 @router.get("", status_code = status.HTTP_200_OK)
