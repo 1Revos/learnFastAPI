@@ -1,10 +1,11 @@
 from fastapi import FastAPI, APIRouter
 from routers.practical_work_1 import router as pw1_router
 from routers.practical_work_2 import router as pw2_router
-from routers.practical_work_3.practical_work_3 import router as pw3_router
+from routers.practical_work_3.exercise_1 import router as pw3_router
 from routers.practical_work_3.movies import router as movies_router
 from routers.practical_work_3.library import router as library_router
 from routers.practical_work_3.shop import router as shop_router
+from routers.practical_work_4.menage_products import router as products_router
  
 app = FastAPI(
     title = "Эдпоинты для FastAPI",
@@ -18,3 +19,4 @@ app.include_router(pw3_router)
 app.include_router(movies_router)
 app.include_router(library_router)
 app.include_router(shop_router)
+app.include_router(products_router)

@@ -8,25 +8,23 @@ router = APIRouter(
 
 library_db = []
 
-@router.get("", status_code = status.HTTP_200_OK)
-async def get_list():
-    return library_db
+# @router.get("", status_code = status.HTTP_200_OK)
+# async def get_list():
+#     return library_db
 
-@router.get("/{books_id}", status_code = status.HTTP_200_OK)
-async def get_book(books_id: int):
-    if books_id not in library_db:
+@router.get("/{book_id}", status_code = status.HTTP_200_OK)
+async def get_book(book_id: int):
+    if not any(book["id"] == book_id for book in library_db):
         raise HTTPException(
             status_code = status.HTTP_404_NOT_FOUND,
-            detail = "Такой книги нет."
+            detail = f"Книга с id {book_id} не найдена"
         )
-    return (book for book in library_db if book["id"] == books_id)
+    return (book for book in library_db if book["id"] == book_id)
 
-@router.get("/author", status_code = status.HTTP_200_OK)
-async def get_autor_books(author: str):
-    if author not in library_db:
-        raise HTTPException(
-            status_code = status.HTTP_404_NOT_FOUND
-        )
+@router.get("", status_code = status.HTTP_200_OK)
+async def get_autor_books(author: str = None):
+    if author is None:
+        return library_db
     
     return (book for book in library_db if book["author"] == author)
 

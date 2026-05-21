@@ -14,7 +14,7 @@ async def get_list():
 
 @router.get("/{movie_id}", status_code = status.HTTP_200_OK)
 async def get_movie(movie_id: int):
-    if movie_id not in movies_db:
+    if not any(movie["id"] == movie_id for movie in  movies_db):
         raise HTTPException(
             status_code = status.HTTP_404_NOT_FOUND,
             detail = "Фильм не найден."
