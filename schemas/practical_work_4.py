@@ -12,3 +12,15 @@ class Students(BaseModel):
     group: str
     average_score: float
 
+class Books(BaseModel):
+    id: int
+    title: str
+    author: str
+    year: int
+    available: str
+
+class Posts(BaseModel):
+    id: int
+    title: str
+    content: str
+    author: str

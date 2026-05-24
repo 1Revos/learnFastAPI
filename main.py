@@ -6,7 +6,9 @@ from routers.practical_work_3.movies import router as movies_router
 from routers.practical_work_3.library import router as library_router
 from routers.practical_work_3.shop import router as shop_router
 from routers.practical_work_4.menage_products import router as products_router
- 
+from routers.practical_work_4.library import router as library2_router
+from routers.practical_work_4.mini_blog import router as mini_blog
+
 app = FastAPI(
     title = "Эдпоинты для FastAPI",
     description = "Изучаем FastAPI",
@@ -20,3 +22,5 @@ app.include_router(movies_router)
 app.include_router(library_router)
 app.include_router(shop_router)
 app.include_router(products_router)
+app.include_router(library2_router)
+app.include_router(mini_blog)
