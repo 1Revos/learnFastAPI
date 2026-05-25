@@ -24,3 +24,10 @@ class Posts(BaseModel):
     title: str
     content: str
     author: str
+
+class Lessons(BaseModel):
+    id: int
+    subject: str
+    teacher: str
+    day: str
+    time: str
