@@ -9,6 +9,7 @@ from routers.practical_work_4.menage_products import router as products_router
 from routers.practical_work_4.library import router as library2_router
 from routers.practical_work_4.mini_blog import router as mini_blog
 from routers.practical_work_4.class_schedule_management import router as class_schedule_management_router
+from routers.practical_work_4.schedule_with_groups_of_students import router as schedule_with_groups_of_students_router
 
 app = FastAPI(
     title = "Эдпоинты для FastAPI",
@@ -26,3 +27,4 @@ app.include_router(products_router)
 app.include_router(library2_router)
 app.include_router(mini_blog)
 app.include_router(class_schedule_management_router)
+app.include_router(schedule_with_groups_of_students_router)

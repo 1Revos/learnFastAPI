@@ -31,3 +31,4 @@ class Lessons(BaseModel):
     teacher: str
     day: str
     time: str
+
